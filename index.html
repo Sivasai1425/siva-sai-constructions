@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827"><link rel="manifest" href="manifest.json"><title>Siva Sai Constructions</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f6f8;color:#111827}.app{max-width:520px;margin:auto;min-height:100vh;background:white}.head{padding:24px 20px;background:#111827;color:white}.head h1{margin:0;font-size:23px}.head p{margin:5px 0 0;opacity:.8;font-size:13px}.content{padding:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{border:1px solid #ddd;border-radius:16px;padding:16px;background:#fff}.tile{min-height:100px;text-align:left}.icon{font-size:26px}.title{font-weight:800;margin-top:10px}.muted{font-size:12px;color:#6b7280;margin-top:4px}.section{font-weight:800;margin:18px 0 10px}label{font-size:12px;font-weight:700;display:block;margin:9px 0 5px}input,select{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:10px;font-size:16px}button{padding:12px;border-radius:10px;border:1px solid #d1d5db;background:white;font-weight:700;font-size:15px}button.primary{width:100%;background:#111827;color:white;border:0;margin-top:14px}.price{font-size:30px;font-weight:900}.result{margin-top:14px;background:#f3f4f6;border-radius:16px;padding:17px}.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #e5e7eb;font-size:13px}.hidden{display:none}.back{margin-bottom:8px}@media(max-width:390px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body><div class="app"><header class="head"><h1>SIVA SAI CONSTRUCTIONS</h1><p>We Build Your Dreams</p></header><main class="content">
+<section id="home"><div class="section">Construction Business</div><div class="grid">
+<button class="card tile" data-page="calc"><div class="icon">🏠</div><div class="title">Cost Calculator</div><div class="muted">Instant house estimate</div></button>
+<button class="card tile" data-page="quote"><div class="icon">📋</div><div class="title">Quotation</div><div class="muted">Prepare client price</div></button>
+<button class="card tile" data-page="profit"><div class="icon">💰</div><div class="title">Profit Calculator</div><div class="muted">Check your margin</div></button>
+<button class="card tile" data-page="rates"><div class="icon">🧱</div><div class="title">Rate Book</div><div class="muted">Your editable rates</div></button>
+</div><div class="section">Quick Estimate</div><div class="result"><div class="muted">1000 sq ft • Standard • Vizag</div><div class="price">₹20,00,000</div><div class="muted">Starter estimate. Edit rates inside the app.</div></div></section>
+
+<section id="calc" class="hidden"><button class="back" data-home>← Home</button><div class="section">🏠 Construction Cost</div>
+<label>Built-up area (sq ft)</label><input id="area" type="number" value="1000" min="100">
+<label>Location</label><select id="loc"><option value="1">Vizag</option><option value=".97">Vizianagaram</option><option value="1.03">Other Andhra</option></select>
+<label>Package</label><select id="pkg"><option value="1700">Basic ₹1,700/sq ft</option><option value="2000" selected>Standard ₹2,000/sq ft</option><option value="2500">Premium ₹2,500/sq ft</option></select>
+<label>Floors</label><select id="floors"><option value="1">Ground</option><option value="1.04">G+1</option><option value="1.08">G+2</option></select>
+<label>Kitchen / additions ₹</label><input id="extra" type="number" value="0" min="0">
+<div class="result"><div class="muted">Estimated project value</div><div class="price" id="estimate">₹20,00,000</div><div class="muted" id="rate">₹2,000/sq ft</div></div>
+<button class="primary" id="break">View breakup</button><div id="details" class="card hidden" style="margin-top:12px"></div></section>
+
+<section id="quote" class="hidden"><button class="back" data-home>← Home</button><div class="section">📋 Quotation</div>
+<label>Customer name</label><input id="name" placeholder="Customer name"><label>Area (sq ft)</label><input id="qa" type="number" value="1000"><label>Quotation amount ₹</label><input id="qp" type="number" value="2200000">
+<button class="primary" id="qgen">Create Preview</button><div id="qout" class="result hidden"></div></section>
+
+<section id="profit" class="hidden"><button class="back" data-home>← Home</button><div class="section">💰 Profit Calculator</div>
+<label>Execution cost ₹</label><input id="cost" type="number" value="1800000"><label>Customer quotation ₹</label><input id="sell" type="number" value="2200000">
+<div class="grid" style="margin-top:14px"><div class="result"><div class="muted">Profit</div><div class="price" id="pr">₹4,00,000</div></div><div class="result"><div class="muted">Margin</div><div class="price" id="pm">18.2%</div></div></div></section>
+
+<section id="rates" class="hidden"><button class="back" data-home>← Home</button><div class="section">🧱 Rate Book</div><div class="muted">Starter values. Replace with your actual supplier rates.</div>
+<label>Cement / bag ₹</label><input type="number" value="400"><label>Steel / kg ₹</label><input type="number" value="65"><label>Labour / sq ft ₹</label><input type="number" value="450"><label>Electrical / sq ft ₹</label><input type="number" value="140"><label>Plumbing / sq ft ₹</label><input type="number" value="150"></section>
+</main></div>
+<script>
+const money=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const pages=['home','calc','quote','profit','rates'];function show(p){pages.forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==p));scrollTo(0,0)}
+document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>show(b.dataset.page));document.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>show('home'));
+function calc(){let a=Math.max(100,+area.value||100),t=a*(+pkg.value||2000)*(+loc.value||1)*(+floors.value||1)+Math.max(0,+extra.value||0);document.getElementById('estimate').textContent=money(t);document.getElementById('rate').textContent=money(t/a)+' / sq ft';return t}
+['area','loc','pkg','floors','extra'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+document.getElementById('break').onclick=()=>{let b=calc(),p=[.12,.24,.14,.12,.10,.08,.09,.07,.04],n=['Foundation & excavation','RCC structure','Masonry & plaster','Flooring & tiling','Doors & windows','Electrical','Plumbing & sanitary','Painting & finishes','Misc. & contingency'];document.getElementById('details').classList.remove('hidden');document.getElementById('details').innerHTML=n.map((x,i)=>`<div class="row"><span>${x}</span><b>${money(b*p[i])}</b></div>`).join('')};
+function prof(){let c=+cost.value||0,s=+sell.value||0,p=s-c;document.getElementById('pr').textContent=money(p);document.getElementById('pm').textContent=s?(p/s*100).toFixed(1)+'%':'0%'}cost.oninput=prof;sell.oninput=prof;
+qgen.onclick=()=>{qout.classList.remove('hidden');qout.innerHTML='<b>SIVA SAI CONSTRUCTIONS</b><p>Quotation for '+(name.value||'Customer')+'</p><div class="row"><span>Built-up area</span><b>'+((+qa.value||0).toLocaleString('en-IN'))+' sq ft</b></div><div class="row"><span>Quoted amount</span><b>'+money(+qp.value||0)+'</b></div><p class="muted">Final quotation subject to drawings, specifications and site conditions.</p>'};
+calc();prof();
+</script></body></html>
