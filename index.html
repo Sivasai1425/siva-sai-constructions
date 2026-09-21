@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827"><meta name="description" content="Siva Sai Constructions house construction package calculator and quotation generator">
+<link rel="manifest" href="manifest.json"><title>Siva Sai Constructions | Packages & Quote</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f6f8;color:#111827;font-family:Arial,Helvetica,sans-serif}.app{max-width:820px;margin:auto;background:#fff;min-height:100vh}.head{padding:17px 18px 14px;border-bottom:1px solid #e5e7eb;position:sticky;top:0;background:#fff;z-index:10}.brand{font-size:22px;font-weight:900;letter-spacing:.2px}.tag{font-size:12px;color:#6b7280;margin-top:4px}.content{padding:14px 14px 30px}.title{font-size:25px;font-weight:900;margin:17px 0 4px}.sub{font-size:13px;color:#6b7280;line-height:1.5}.panel{border:1px solid #dfe3e8;border-radius:15px;padding:14px;margin:14px 0;background:#fff}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{display:block;font-size:12px;font-weight:800;margin:7px 0 5px}input,select{width:100%;min-height:45px;border:1px solid #cfd5dc;border-radius:10px;padding:9px;font-size:16px;background:#fff}button{min-height:48px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;border:1px solid #d1d5db;background:#fff;border-radius:10px;padding:10px 13px;font-weight:800;cursor:pointer}.primary{background:#111827;color:#fff;border:0;width:100%}.quoteBtn{background:#f15a24;color:#fff;border:0;width:100%;font-size:16px;margin-top:12px;min-height:54px;touch-action:manipulation}.stickyQuote{position:sticky;bottom:10px;z-index:20;margin-top:12px;padding:2px}.stickyQuote button{box-shadow:0 5px 18px rgba(0,0,0,.18)}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px 0}.tab.active{background:#111827;color:#fff}.package{border:1px solid #d9dde2;border-radius:14px;overflow:hidden}.ratebar{background:#f15a24;color:#fff;padding:14px;font-size:17px;font-weight:900}.packbody{padding:13px}.packname{font-size:18px;font-weight:900}.desc{font-size:12px;color:#6b7280;margin:3px 0 10px}.item{border-top:1px solid #eceff1;padding:11px 0;cursor:pointer}.itemhead{display:flex;justify-content:space-between;gap:10px;font-weight:800;font-size:14px}.itembody{display:none;color:#4b5563;font-size:12px;line-height:1.5;padding:7px 0 0}.item.open .itembody{display:block}.plus{font-size:20px}.result{background:#f3f4f6;border-radius:14px;padding:15px;margin-top:13px}.big{font-size:30px;font-weight:900}.small{font-size:12px;color:#6b7280;line-height:1.45}.row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #e5e7eb;font-size:13px}.row:last-child{border:0}.warn{background:#fafafa;border-left:4px solid #9ca3af;padding:11px;font-size:12px;color:#4b5563;margin-top:10px;line-height:1.5}.pill{display:inline-block;border:1px solid #ddd;border-radius:999px;padding:5px 8px;font-size:11px;margin:3px 2px 0 0}.hidden{display:none}.quote{display:none}.quote.show{display:block}.quoteHead{border-bottom:2px solid #111827;padding-bottom:10px;margin-bottom:10px}.quoteTitle{font-size:24px;font-weight:900}.quoteNo{font-size:12px;color:#6b7280}.quoteTable{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}.quoteTable th,.quoteTable td{border:1px solid #dfe3e8;padding:8px;text-align:left;vertical-align:top}.quoteTable th{background:#f3f4f6}.right{text-align:right!important}.grand{font-size:18px;font-weight:900}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.material{font-size:11px;color:#374151;margin-top:4px}.note{font-size:11px;color:#6b7280;line-height:1.5}.sectionTitle{font-weight:900;margin:8px 0}.configBox{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:11px;font-size:12px;line-height:1.5;margin-top:10px}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.tabs{grid-template-columns:1fr 1fr}.title{font-size:23px}.big{font-size:27px}.quoteTable{font-size:11px}.quoteTable th,.quoteTable td{padding:6px}}
+@media print{body{background:#fff}.head,.calculator,.actions,.noPrint{display:none!important}.app{max-width:none}.content{padding:0}.quote{display:block!important}.quoteTable{font-size:10px}}
+</style>
+</head>
+<body><div class="app">
+<header class="head"><div class="brand">SIVA SAI CONSTRUCTIONS</div><div class="tag">We Build Your Dreams • House Construction Packages</div></header>
+<main class="content">
+<section class="calculator">
+<div class="title">Our Packages</div><div class="sub">Choose the ground-floor footprint, building configuration and location. The calculator multiplies the <b>total constructed floor area</b> by the selected package rate.</div>
+<div class="panel">
+<div class="grid">
+<div><label>Project location</label><select id="loc"><option value="0">Bobbili / nearby interior</option><option value="50">Vizianagaram</option><option value="50">Parvathipuram</option><option value="50">Anandapuram / Pendurthi</option><option value="75">Anakapalli / outer Vizag</option><option value="100">Madhurawada / PM Palem / Kommadi</option><option value="150">Central Vizag</option><option value="250">MVP / Siripuram / premium coastal belt</option></select></div>
+<div><label>Ground-floor built-up area (sq ft)</label><input id="area" type="number" value="1200" min="300" step="1"></div>
+<div><label>Building configuration</label><select id="floors"><option value="1">Ground only</option><option value="2" selected>G+1</option><option value="3">G+2</option><option value="2">Stilt + Ground</option><option value="3">Stilt + G+1</option><option value="4">Stilt + G+2</option></select></div>
+<div><label>Client name</label><input id="client" type="text" placeholder="Optional"></div>
+<div><label>Plot / project reference</label><input id="plot" type="text" placeholder="Optional"></div>
+<div><label>Quote validity</label><select id="validity"><option>15 days</option><option selected>30 days</option><option>45 days</option></select></div>
+</div>
+<div id="configNote" class="configBox"></div>
+</div>
+<div class="tabs"><button class="tab active" data-tier="0">Basic</button><button class="tab" data-tier="1">Classic</button><button class="tab" data-tier="2">Premium</button><button class="tab" data-tier="3">Royal</button></div>
+<div id="pack" class="package"></div>
+<div class="result"><div class="small">Total constructed area</div><div class="big" id="totalArea">2,400 sq ft</div><div class="small" id="areaFormula">1,200 × 2 floors</div><hr style="border:0;border-top:1px solid #ddd;margin:12px 0"><div class="small">Estimated construction value</div><div class="big" id="total">₹44,40,000</div><div class="small" id="rate">₹1,850/sq ft effective package rate</div><div class="stickyQuote"><button id="generate" type="button" class="quoteBtn">GENERATE DETAILED QUOTE →</button></div></div>
+<div class="panel"><b>Package coverage</b><div id="pills"></div><div class="warn">Starting package rates. Final quote must be confirmed after site visit, soil/foundation requirements, drawings and signed scope. Compound wall, borewell, approvals, lift, unusual retaining/deep foundation work, loose furniture and client-requested upgrades are separate unless specifically included.</div></div>
+</section>
+<section id="quote" class="quote panel">
+<div class="quoteHead"><div class="quoteTitle">SIVA SAI CONSTRUCTIONS</div><div class="small">We Build Your Dreams</div><div class="quoteNo" id="quoteNo"></div></div>
+<div class="grid" style="margin-bottom:10px"><div><b>Client</b><div id="qClient" class="small"></div></div><div><b>Project</b><div id="qPlot" class="small"></div></div><div><b>Location</b><div id="qLoc" class="small"></div></div><div><b>Configuration</b><div id="qConfig" class="small"></div></div><div><b>Total constructed area</b><div id="qArea" class="small"></div></div><div><b>Package</b><div id="qPackage" class="small"></div></div></div>
+<table class="quoteTable"><thead><tr><th>Work category</th><th>Specification / material scope</th><th class="right">Amount</th></tr></thead><tbody id="quoteRows"></tbody><tfoot><tr><td colspan="2" class="right grand">TOTAL</td><td class="right grand" id="qTotal"></td></tr></tfoot></table>
+<div class="panel" style="margin:12px 0 0"><div class="sectionTitle">Material & specification schedule</div><div id="materialSchedule"></div></div>
+<div class="note"><b>Important:</b> This is a package estimate generated from the selected rate and included scope. Brand/model, exact quantities, structural sizes, reinforcement, tile selection, electrical point count and plumbing fixture count should be frozen in the final BOQ and agreement. Taxes, if applicable, should be shown separately in the final signed quotation unless your company explicitly chooses an all-inclusive tax treatment.</div>
+<div class="actions noPrint"><button onclick="window.print()">PRINT / SAVE PDF</button><button onclick="document.getElementById('quote').classList.remove('show');window.scrollTo({top:0,behavior:'smooth'})">EDIT QUOTE</button></div>
+</section>
+</main></div>
+<script>
+(()=>{
+const tiers=[
+{name:'Basic',base:1850,desc:'Essential, clean and cost-controlled home package',items:{
+'Structure':['30%','RCC framed structure, foundation as per soil/structural design, standard reinforcement and masonry.','Cement: IS-compliant OPC/PPC; TMT: IS 1786 grade as designed; concrete grade as structural design.'],
+'Kitchen':['8%','Basic granite platform, standard sink and basic storage provision.','Granite platform, stainless-steel sink, standard CP tap; modular cabinets only if stated in BOQ.'],
+'Bathroom':['8%','Standard branded sanitaryware and CP fittings with practical wall/floor tiles.','Branded sanitaryware/CP fittings, anti-skid floor tiles, ceramic/vitrified wall tiles.'],
+'Doors & Windows':['10%','Flush/engineered doors and standard aluminium/uPVC windows with basic hardware.','Engineered/flush doors, aluminium or uPVC windows, standard locks/handles.'],
+'Painting':['7%','Interior putty/emulsion system and exterior weather-resistant paint.','Wall putty, interior emulsion, exterior weather-resistant coating.'],
+'Flooring':['10%','Standard vitrified flooring with skirting; anti-skid bathroom tiles.','Vitrified floor tiles, matching skirting, anti-skid wet-area tiles.'],
+'Electrical':['8%','Concealed wiring and standard branded wires/switches as per agreed point schedule.','IS-compliant copper wiring, modular switches, DB/MCB protection and agreed points.'],
+'Plumbing':['7%','Concealed water and soil/waste piping with standard fixtures.','CPVC/uPVC plumbing, traps, valves and drainage connections as designed.'],
+'Miscellaneous':['12%','Basic overhead tank, sump provision, staircase finish/railing and routine consumables.','Water tank, sump provision, standard staircase finish/railing and construction consumables.']
+}},
+{name:'Classic',base:2150,desc:'Balanced family package with upgraded finishes',items:{
+'Structure':['30%','RCC framed structure with specified concrete/steel grades, anti-termite treatment and improved waterproofing provisions.','IS-compliant cement/TMT, structural-grade concrete, anti-termite treatment, terrace/toilet waterproofing.'],
+'Kitchen':['8%','Granite/quartz allowance, better sink and modular base/wall cabinet allowance.','Granite/quartz countertop allowance, SS sink, modular cabinet allowance, branded CP fitting.'],
+'Bathroom':['8%','Branded sanitaryware/CP fittings, upgraded tiles, mirror/vanity allowance.','Branded sanitaryware, CP fittings, better tile allowance, mirror/vanity provision.'],
+'Doors & Windows':['10%','Premium flush/laminated doors, better uPVC/aluminium windows and hardware.','Laminated/engineered doors, upgraded uPVC/aluminium sections, branded hardware.'],
+'Painting':['7%','Premium interior emulsion and exterior weatherproof coating with selected accent walls.','Premium emulsion, exterior weatherproof paint and limited texture/accent treatment.'],
+'Flooring':['10%','Large-format vitrified options, anti-skid bathroom flooring and upgraded staircase finish.','Large-format vitrified tiles, anti-skid wet-area tiles, granite/tile staircase finish.'],
+'Electrical':['8%','Fire-resistant wiring, modular switches and additional convenience points.','FR/HR wiring, modular switches, MCB/RCCB protection and agreed additional points.'],
+'Plumbing':['7%','Upgraded concealed water and drainage system with branded fittings.','CPVC/uPVC systems, better valves/traps, branded fixtures and pressure testing.'],
+'Miscellaneous':['12%','Double-layer overhead tank, underground sump allowance, railing option and utility provisions.','Double-layer tank, RCC/underground sump allowance, MS/SS railing option and utility points.']
+}},
+{name:'Premium',base:2450,desc:'Enhanced materials, elevation and interior allowances',items:{
+'Structure':['30%','Upgraded RCC specification, stronger waterproofing package and coordinated structural detailing.','Higher-spec cement/TMT/concrete subject to design, premium waterproofing system and treatment.'],
+'Kitchen':['8%','Higher modular kitchen allowance, granite/quartz countertop, better hardware and utility storage.','Higher-grade modular shutters/hardware, granite/quartz, SS sink and utility storage allowance.'],
+'Bathroom':['8%','Premium branded sanitaryware/CP fittings, shower fittings, vanity and upgraded tiles.','Premium sanitaryware/CP, shower fittings, vanity, designer tile allowance.'],
+'Doors & Windows':['10%','Designer main door allowance, laminated/veneer internal doors and upgraded window systems.','Designer main door allowance, veneer/laminated internal doors, upgraded aluminium/uPVC and hardware.'],
+'Painting':['7%','Premium interior/exterior systems, texture/accent finish allowance and better weather protection.','Premium interior/exterior coatings, selected texture and accent finishes.'],
+'Flooring':['10%','Premium vitrified/large-format tiles, granite/engineered stone accents and upgraded staircase.','Premium large-format vitrified, engineered/natural-stone feature allowance, upgraded staircase.'],
+'Electrical':['8%','Premium modular switches, AC/geyser provisions and data/CCTV readiness.','Premium switches, dedicated circuits, AC/geyser points, data/CCTV conduits and protection.'],
+'Plumbing':['7%','Upgraded water/drainage system with premium fixture allowance and testing.','Premium CPVC/uPVC, better valves/traps, fixture allowance and pressure/leak testing.'],
+'Miscellaneous':['12%','Upgraded tanks/sump, railing, window grills where required, façade/elevation and selected exterior lighting.','Upgraded tanks/sump, railing/grills, façade accents and exterior lighting allowance.']
+}},
+{name:'Royal',base:2850,desc:'High-spec residence with premium finish allowances',items:{
+'Structure':['30%','High-spec RCC and waterproofing package subject to structural design, soil report and site conditions.','High-grade structural materials as designed, premium waterproofing and site-specific foundation treatment.'],
+'Kitchen':['8%','Premium modular kitchen allowance with higher-grade shutters/hardware, countertop and appliance niches.','Premium modular shutters/hardware, quartz/granite, SS sink, tall/utility unit allowance.'],
+'Bathroom':['8%','Premium sanitaryware/CP fittings, designer tile allowance, vanity and shower enclosure allowance.','Premium branded fixtures, designer tiles, vanity, shower enclosure allowance and accessories.'],
+'Doors & Windows':['10%','Premium main door, designer internal doors, high-performance aluminium/uPVC windows and hardware.','Premium main door, designer internal doors, high-performance windows, premium hardware.'],
+'Painting':['7%','Premium interior/exterior coatings, feature textures and coordinated elevation palette.','Premium coatings, texture/feature walls and coordinated exterior colour treatment.'],
+'Flooring':['10%','Large-format premium tiles, engineered/natural-stone feature allowance and premium staircase treatment.','Premium large-format tiles, engineered/natural stone feature allowance, premium staircase.'],
+'Electrical':['8%','Premium switches, comprehensive point schedule, AC/geyser/EV/CCTV/data provisions and decorative-light allowance.','Premium modular switches, comprehensive circuits, EV/AC/geyser/CCTV/data readiness.'],
+'Plumbing':['7%','Premium concealed water and drainage system with upgraded fixture allowance.','Premium plumbing network, valves/traps, pressure testing and upgraded fixture allowance.'],
+'Miscellaneous':['12%','Premium elevation features, upgraded tanks/sump, railing, grills, exterior lighting and selected landscape allowance.','Premium façade elements, tanks/sump, railing/grills, exterior lighting and limited landscape allowance.']
+}}
+];
+let tier=0;
+const $=id=>document.getElementById(id); const money=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+function selectedFloors(){return Number($('floors').value)||1}
+function area(){return Math.max(300,Number($('area').value)||300)}
+function render(){
+ const t=tiers[tier], adj=Number($('loc').value)||0, rate=t.base+adj, f=selectedFloors(), a=area(), totalArea=a*f, total=totalArea*rate;
+ $('totalArea').textContent=totalArea.toLocaleString('en-IN')+' sq ft'; $('areaFormula').textContent=a.toLocaleString('en-IN')+' × '+f+' constructed floor(s)';
+ $('configNote').innerHTML='<b>Calculation:</b> '+a.toLocaleString('en-IN')+' sq ft ground footprint × '+f+' = <b>'+totalArea.toLocaleString('en-IN')+' sq ft total constructed area</b>. Then '+totalArea.toLocaleString('en-IN')+' × '+money(rate)+'/sq ft = <b>'+money(total)+'</b>.';
+ $('pack').innerHTML='<div class="ratebar">'+t.name+' – '+money(rate)+'/sqft</div><div class="packbody"><div class="packname">'+t.name+' Package</div><div class="desc">'+t.desc+'</div>'+Object.entries(t.items).map(([k,v])=>'<div class="item"><div class="itemhead"><span>'+k+'</span><span class="plus">+</span></div><div class="itembody"><b>Scope:</b> '+v[1]+'<div class="material"><b>Materials/spec:</b> '+v[2]+'</div></div></div>').join('')+'</div>';
+ document.querySelectorAll('.item').forEach(x=>x.addEventListener('click',()=>x.classList.toggle('open'),{passive:true}));
+ $('total').textContent=money(total); $('rate').textContent=money(rate)+' / sq ft • '+$('loc').selectedOptions[0].text+' • '+$('floors').selectedOptions[0].text;
+ $('pills').innerHTML=Object.keys(t.items).map(x=>'<span class="pill">'+x+'</span>').join('');
+}
+function generateQuote(){
+ const t=tiers[tier], adj=Number($('loc').value)||0, rate=t.base+adj, f=selectedFloors(), a=area(), totalArea=a*f,total=totalArea*rate;
+ if(!Number.isFinite(totalArea)||totalArea<=0){alert('Please enter a valid built-up area.');return;}
+ $('quote').classList.add('show'); $('quoteNo').textContent='Quotation estimate • '+new Date().toLocaleDateString('en-IN')+' • Valid for '+$('validity').value;
+ $('qClient').textContent=$('client').value||'Client name to be confirmed'; $('qPlot').textContent=$('plot').value||'Project reference to be confirmed'; $('qLoc').textContent=$('loc').selectedOptions[0].text; $('qConfig').textContent=$('floors').selectedOptions[0].text+' • '+a.toLocaleString('en-IN')+' sq ft/floor'; $('qArea').textContent=totalArea.toLocaleString('en-IN')+' sq ft'; $('qPackage').textContent=t.name+' • '+money(rate)+'/sq ft'; $('qTotal').textContent=money(total);
+ $('quoteRows').innerHTML=Object.entries(t.items).map(([k,v])=>{let amt=total*Number(v[0].replace('%',''))/100;return '<tr><td><b>'+k+'</b><div class="small">'+v[0]+' of package value</div></td><td>'+v[1]+'<div class="material"><b>Materials:</b> '+v[2]+'</div></td><td class="right">'+money(amt)+'</td></tr>'}).join('');
+ $('materialSchedule').innerHTML=Object.entries(t.items).map(([k,v])=>'<div class="row"><span><b>'+k+'</b><div class="small">'+v[2]+'</div></span><span>'+v[0]+'</span></div>').join('');
+ setTimeout(()=>{$('quote').scrollIntoView({behavior:'smooth',block:'start'})},50);
+}
+document.querySelectorAll('[data-tier]').forEach(b=>{
+  const choose=ev=>{ev.preventDefault();tier=+b.dataset.tier;document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()};
+  b.addEventListener('click',choose,{passive:false});
+});
+['loc','area','floors','client','plot','validity'].forEach(id=>{
+  $(id).addEventListener('input',render);
+  $(id).addEventListener('change',render);
+});
+let quoteBusy=false;
+const generateBtn=$('generate');
+function runGenerate(ev){
+  if(ev){ev.preventDefault();ev.stopPropagation();}
+  if(quoteBusy)return;
+  quoteBusy=true;
+  generateBtn.textContent='GENERATING QUOTE…';
+  generateQuote();
+  setTimeout(()=>{quoteBusy=false;generateBtn.textContent='GENERATE DETAILED QUOTE →';},350);
+}
+generateBtn.addEventListener('click',runGenerate,{passive:false});
+generateBtn.addEventListener('touchend',runGenerate,{passive:false});
+render();
+})();
+</script></body></html>
