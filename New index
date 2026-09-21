@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Siva Sai Constructions – We Build Your Dreams</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #0f172a;        /* navy */
+      --primary-light: #1e293b;
+      --accent: #f97316;         /* orange */
+      --accent-hover: #ea580c;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --warning: #ca8a04;
+      --danger: #dc2626;
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Hero */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #fff;
+      padding: 40px 0 60px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 22px;
+    }
+    .brand-name {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+    .tagline {
+      font-size: 16px;
+      opacity: 0.9;
+      max-width: 520px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; margin-top: 30px; }
+    h3 { font-size: 18px; }
+
+    p { margin-bottom: 12px; color: var(--text-muted); }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-bottom: 22px;
+      border: 1px solid var(--border);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    /* Packages */
+    .package-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stat-box {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 14px 16px;
+      min-width: 180px;
+      flex: 1 1 200px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: var(--accent-hover);
+      text-decoration: none;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn-outline:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Forms */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 14px;
+      color: var(--text);
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--accent);
+      border-color: transparent;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Plan preview placeholders */
+    .plan-preview {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+      padding: 14px;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    tfoot td {
+      font-weight: 700;
+      background: #f8fafc;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      font-size: 13px;
+      color: var(--text-muted);
+      background: #fff7ed;
+      border-left: 4px solid var(--warning);
+      padding: 12px 14px;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding: 30px 0 50px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+    .footer-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 26px; }
+      h2 { font-size: 20px; }
+      .brand-name { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="brand-logo">SS</div>
+        <div class="brand-name">Siva Sai Constructions</div>
+      </div>
+      <h1>We Build Your Dreams</h1>
+      <p class="tagline">
+        End-to-end residential construction with transparent packages, Vastu-friendly planning, and quality-controlled execution.
+      </p>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: -30px;">
+
+    <!-- Packages -->
+    <section class="card">
+      <h2>Our Construction Packages</h2>
+      <p>
+        Starting rates for Siva Sai Constructions. Location adjustments can be configured. Final pricing is subject to site conditions, drawings, and signed scope.
+      </p>
+
+      <div class="package-highlight">
+        <div class="stat-box">
+          <div class="stat-label">Total constructed area</div>
+          <div class="stat-value">2,400 sq ft</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Estimated construction value</div>
+          <div class="stat-value">₹44,40,000</div>
+        </div>
+        <div>
+          <a href="#plan-generator" class="btn">Generate House Plan</a>
+        </div>
+      </div>
+
+      <h3>Package coverage</h3>
+      <p>
+        Starting package rates. Final quote must be confirmed after site visit, soil/foundation requirements, drawings, and signed scope.
+        Compound wall, borewell, approvals, lift, unusual retaining/deep foundation work, loose furniture, and client-requested upgrades are separate unless specifically included.
+      </p>
+    </section>
+
+    <!-- House Plan Generator -->
+    <section id="plan-generator" class="card">
+      <h2>House Plan Generator</h2>
+      <p>
+        Enter plot and road details. The generator uses municipal rule datasets to create a concept buildable outline, a Vastu-oriented room layout, and a front elevation concept.
+      </p>
+
+      <form id="planForm">
+        <div class="form-grid">
+          <div>
+            <label for="plotLength">Plot length (ft)</label>
+            <input type="number" id="plotLength" min="20" step="1" placeholder="e.g. 60" required />
+          </div>
+          <div>
+            <label for="plotWidth">Plot width (ft)</label>
+            <input type="number" id="plotWidth" min="20" step="1" placeholder="e.g. 40" required />
+          </div>
+          <div>
+            <label for="roadWidth">Road width (ft)</label>
+            <input type="number" id="roadWidth" min="10" step="1" placeholder="e.g. 30" required />
+          </div>
+          <div>
+            <label for="facing">Plot facing</label>
+            <select id="facing" required>
+              <option value="">Select</option>
+              <option value="East">East</option>
+              <option value="West">West</option>
+              <option value="North">North</option>
+              <option value="South">South</option>
+            </select>
+          </div>
+          <div>
+            <label for="floors">Preferred floors</label>
+            <select id="floors" required>
+              <option value="">Select</option>
+              <option value="G+0">G+0 (Ground only)</option>
+              <option value="G+1">G+1</option>
+              <option value="G+2">G+2</option>
+              <option value="G+3">G+3</option>
+            </select>
+          </div>
+          <div>
+            <label for="config">Configuration</label>
+            <select id="config" required>
+              <option value="">Select</option>
+              <option value="2BHK">2 BHK</option>
+              <option value="3BHK">3 BHK</option>
+              <option value="4BHK">4 BHK</option>
+              <option value="Custom">Custom</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Generate Concept Plan</button>
+          <button type="button" class="btn btn-outline" id="resetBtn">Reset</button>
+        </div>
+      </form>
+
+      <h3 style="margin-top: 22px;">1. Site & setback outline</h3>
+      <div class="grid grid-2">
+        <div class="plan-preview" id="siteOutlinePreview">
+          Site outline and buildable area will appear here after generation.
+        </div>
+        <div class="plan-preview" id="floorConfigPreview">
+          Floor configuration summary will appear here.
+        </div>
+      </div>
+
+      <h3>2. Concept 2D floor plan</h3>
+      <div class="plan-preview" id="floorPlanPreview">
+        Concept 2D floor plan visualization will appear here.
+      </div>
+      <p style="font-size: 13px; margin-top: 8px;">
+        Concept plan only. Room dimensions, structural grid, ventilation, plumbing shafts, fire/access requirements, and sanction drawings require architect/engineer verification.
+      </p>
+
+      <h3>3. Front elevation concept</h3>
+      <div class="plan-preview" id="elevationPreview">
+        Front elevation concept will appear here.
+      </div>
+    </section>
+
+    <!-- Plan-based construction summary -->
+    <section class="card">
+      <h2>4. Plan-based construction summary</h2>
+
+      <div class="grid grid-2">
+        <div>
+          <h3>Project details</h3>
+          <div class="form-grid">
+            <div>
+              <label>Client</label>
+              <input type="text" id="clientName" placeholder="Client name" />
+            </div>
+            <div>
+              <label>Project</label>
+              <input type="text" id="projectName" placeholder="Project name / location" />
+            </div>
+            <div>
+              <label>Location</label>
+              <input type="text" id="location" placeholder="City / area" />
+            </div>
+            <div>
+              <label>Configuration</label>
+              <input type="text" id="configDisplay" placeholder="e.g. 3 BHK" readonly />
+            </div>
+            <div>
+              <label>Total constructed area</label>
+              <input type="text" id="areaDisplay" placeholder="e.g. 2,400 sq ft" readonly />
+            </div>
+            <div>
+              <label>Package</label>
+              <input type="text" id="packageDisplay" placeholder="Package name" readonly />
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Estimated cost summary</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Work category</th>
+                <th>Specification / material scope</th>
+                <th style="width: 140px;">Amount (₹)</th>
+              </tr>
+            </thead>
+            <tbody id="costTableBody">
+              <tr>
+                <td>Structure & foundation</td>
+                <td>Reinforced concrete, standard foundation as per soil report</td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td>Brickwork & plaster</td>
+                <td>Fly ash / red brick, cement–sand plaster</td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td>Finishes</td>
+                <td>Flooring, painting, basic false ceiling (if any)</td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td>Electrical & plumbing</td>
+                <td>Concealed wiring, standard fixtures</td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td>Doors & windows</td>
+                <td>Standard wooden / uPVC as per specification</td>
+                <td>–</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">TOTAL (indicative)</td>
+                <td id="totalAmount">₹44,40,000</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 18px;">Material & specification schedule</h3>
+      <div class="plan-preview">
+        Detailed material brands, grades, and specifications will be attached with the final quotation.
+      </div>
+
+      <h3 style="margin-top: 18px;">Plan & municipal inputs</h3>
+      <div class="plan-preview">
+        Municipal rule dataset and setback logic results will be summarized here once the plan is generated.
+      </div>
+    </section>
+
+    <!-- Disclaimers -->
+    <section class="card">
+      <h3>Important</h3>
+      <div class="disclaimer">
+        This quotation and generated plan are preliminary concepts. Final sanction drawings, structural design, soil/foundation design, exact material brands, quantities, setbacks, and approvals must be confirmed by the applicable local authority and a qualified architect/engineer. The supplied setback dataset is encoded as a planning aid and should not be treated as a legal approval.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">Siva Sai Constructions</div>
+          <p>We build quality homes with transparent processes and on-time delivery.</p>
+        </div>
+        <div>
+          <div class="footer-title">Contact</div>
+          <p>
+            Phone: +91-XXXXXXXXXX<br />
+            Email: info@sivasai_constructions.example
+          </p>
+        </div>
+        <div>
+          <div class="footer-title">Service areas</div>
+          <p>Chennai and surrounding districts, Tamil Nadu.</p>
+        </div>
+      </div>
+      <p style="margin-top: 18px; font-size: 13px;">
+        © 2026 Siva Sai Constructions. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple front-end logic to simulate plan generation
+    const form = document.getElementById('planForm');
+    const resetBtn = document.getElementById('resetBtn');
+
+    const siteOutlinePreview = document.getElementById('siteOutlinePreview');
+    const floorConfigPreview = document.getElementById('floorConfigPreview');
+    const floorPlanPreview = document.getElementById('floorPlanPreview');
+    const elevationPreview = document.getElementById('elevationPreview');
+
+    const configDisplay = document.getElementById('configDisplay');
+    const areaDisplay = document.getElementById('areaDisplay');
+    const packageDisplay = document.getElementById('packageDisplay');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const length = parseFloat(document.getElementById('plotLength').value);
+      const width = parseFloat(document.getElementById('plotWidth').value);
+      const road = parseFloat(document.getElementById('roadWidth').value);
+      const facing = document.getElementById('facing').value;
+      const floors = document.getElementById('floors').value;
+      const config = document.getElementById('config').value;
+
+      if (!length || !width || !road || !facing || !floors || !config) {
+        alert('Please fill all fields correctly.');
+        return;
+      }
+
+      // Very basic setback logic (example only, not legal)
+      const frontSetback = road >= 40 ? 10 : road >= 30 ? 8 : road >= 20 ? 6 : 5;
+      const sideSetback = 4;
+      const rearSetback = 5;
+
+      const buildableLength = Math.max(0, length - frontSetback - rearSetback);
+      const buildableWidth = Math.max(0, width - 2 * sideSetback);
+      const buildableArea = buildableLength * buildableWidth;
+
+      siteOutlinePreview.innerHTML = `
+        <div>
+          <strong>Plot:</strong> ${length} ft × ${width} ft<br />
+          <strong>Road width:</strong> ${road} ft (facing ${facing})<br />
+          <strong>Assumed setbacks:</strong><br />
+          Front: ${frontSetback} ft, Side: ${sideSetback} ft each, Rear: ${rearSetback} ft<br />
+          <strong>Approx. buildable footprint:</strong> ${buildableLength.toFixed(1)} ft × ${buildableWidth.toFixed(1)} ft<br />
+          <strong>Buildable area per floor:</strong> ~${Math.round(buildableArea)} sq ft
+        </div>
+      `;
+
+      floorConfigPreview.innerHTML = `
+        <div>
+          <strong>Floors:</strong> ${floors}<br />
+          <strong>Configuration:</strong> ${config}<br />
+          <strong>Indicative total constructed area:</strong><br />
+          ~${Math.round(buildableArea * (floors.replace('G+', '1') === '1' ? 1 : parseInt(floors.split('+')[1]) + 1))} sq ft
+        </div>
+      `;
+
+      floorPlanPreview.innerHTML = `
+        <div>
+          Concept ${config} layout on a ${buildableLength.toFixed(0)}×${buildableWidth.toFixed(0)} ft footprint.<br />
+          Rooms oriented as per Vastu guidelines for ${facing}-facing plot.<br />
+          (Detailed plan to be prepared by architect.)
+        </div>
+      `;
+
+      elevationPreview.innerHTML = `
+        <div>
+          Modern front elevation concept for ${floors} with ${config} configuration.<br />
+          Balanced openings, shaded balconies, and simple contemporary styling.
+        </div>
+      `;
+
+      // Update summary fields
+      configDisplay.value = config;
+      const totalFloors = floors === 'G+0' ? 1 : parseInt(floors.split('+')[1]) + 1;
+      const totalArea = Math.round(buildableArea * totalFloors);
+      areaDisplay.value = `${totalArea.toLocaleString('en-IN')} sq ft`;
+      packageDisplay.value = `${config} • ${floors}`;
+
+      // Scroll to summary
+      document.querySelector('#plan-generator + .card').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    resetBtn.addEventListener('click', function () {
+      form.reset();
+      siteOutlinePreview.innerHTML = 'Site outline and buildable area will appear here after generation.';
+      floorConfigPreview.innerHTML = 'Floor configuration summary will appear here.';
+      floorPlanPreview.innerHTML = 'Concept 2D floor plan visualization will appear here.';
+      elevationPreview.innerHTML = 'Front elevation concept will appear here.';
+
+      configDisplay.value = '';
+      areaDisplay.value = '';
+      packageDisplay.value = '';
+    });
+  </script>
+</body>
+</html>
