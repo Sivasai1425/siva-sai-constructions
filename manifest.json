@@ -1,0 +1,9 @@
+{
+  "name": "Siva Sai Constructions Packages",
+  "short_name": "Siva Sai Packages",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f8",
+  "theme_color": "#111827",
+  "description": "House construction package calculator and detailed quotation generator for Siva Sai Constructions"
+}
