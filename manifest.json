@@ -1,9 +1,0 @@
-{
-  "name": "Siva Sai Constructions Smart House Planner",
-  "short_name": "Siva Sai Planner",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#f5f2ec",
-  "theme_color": "#171a22",
-  "description": "Parametric house planning, Vastu-oriented layout, construction calculator and quotation tool."
-}
