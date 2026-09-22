@@ -1,0 +1,1 @@
+Replace the existing index.html in GitHub with this file. manifest.json can remain unchanged.
