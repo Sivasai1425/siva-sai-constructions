@@ -1,9 +1,8 @@
 {
-  "name":"Siva Sai Constructions AI House Planner",
-  "short_name":"Siva Sai AI",
-  "start_url":".",
-  "display":"standalone",
-  "background_color":"#f5f3ee",
-  "theme_color":"#151922",
-  "icons":[]
+  "name": "Siva Sai Constructions Smart House Planner",
+  "short_name": "Siva Sai Planner",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f5f2ec",
+  "theme_color": "#171a22"
 }
