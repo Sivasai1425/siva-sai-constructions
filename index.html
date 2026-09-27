@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b4038">
+<title>Siva Sai Constructions | Premium Home Construction</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand">
+    <div class="mark">⌂</div>
+    <div><strong>SIVA SAI</strong><small>CONSTRUCTIONS</small></div>
+  </div>
+  <button class="nav-btn" id="navCalc">Construction Calculator</button>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="tiny">PLAN • BUILD • LIVE BETTER</div>
+    <h1>Premium<br><span>Home</span><br>Construction</h1>
+    <p>Thoughtfully designed homes with transparent pricing, practical planning and complete construction support.</p>
+    <div class="hero-buttons">
+      <button class="gold" id="packagesBtn">Explore Packages</button>
+      <button class="light" id="heroCalc">Calculate Your Home</button>
+    </div>
+    <div class="trust">
+      <div><b>◆</b><span>Premium<br>Quality</span></div>
+      <div><b>✓</b><span>Reliable<br>Construction</span></div>
+      <div><b>⌂</b><span>Modern<br>Designs</span></div>
+      <div><b>♧</b><span>Smart<br>Planning</span></div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="reference-building.jpg" alt="Modern premium home from the supplied reference">
+    <div class="image-caption">
+      <span>A BETTER TOMORROW</span>
+      <b>BEGINS AT HOME</b>
+    </div>
+  </div>
+</section>
+
+<section class="packages" id="packages">
+  <div class="heading">
+    <div class="tiny">CHOOSE YOUR PERFECT</div>
+    <h2>HOME PACKAGE</h2>
+    <p>Tap a package to see specifications, inclusions and an instant estimate.</p>
+  </div>
+
+  <div class="cards">
+    <article class="card value" data-package="value">
+      <div class="tag">SMART CHOICE</div>
+      <img src="reference-building.jpg" alt="Value package home">
+      <div class="card-body">
+        <h3>VALUE</h3><small>CONSTRUCTION PACKAGE</small>
+        <strong>₹2,199 <em>/ sq.ft</em></strong>
+        <ul><li>Quality materials</li><li>Functional design</li><li>Budget friendly</li><li>Ideal for first-time builders</li></ul>
+        <button>View Details</button>
+      </div>
+    </article>
+
+    <article class="card premium" data-package="premium">
+      <div class="tag">★ MOST POPULAR</div>
+      <img src="reference-building.jpg" alt="Premium package home">
+      <div class="card-body">
+        <h3>PREMIUM</h3><small>CONSTRUCTION PACKAGE</small>
+        <strong>₹2,499 <em>/ sq.ft</em></strong>
+        <ul><li>Superior finishes</li><li>Modern architecture</li><li>Better durability</li><li>Perfect luxury + value balance</li></ul>
+        <button>View Details</button>
+      </div>
+    </article>
+
+    <article class="card luxury" data-package="luxury">
+      <div class="tag">LIVE LUXURY</div>
+      <img src="reference-building.jpg" alt="Luxury package home">
+      <div class="card-body">
+        <h3>LUXURY</h3><small>CONSTRUCTION PACKAGE</small>
+        <strong>₹2,799 <em>/ sq.ft</em></strong>
+        <ul><li>High-end materials</li><li>Premium design</li><li>Smart-home ready</li><li>Luxury living experience</li></ul>
+        <button>View Details</button>
+      </div>
+    </article>
+  </div>
+
+  <div class="calculator-banner">
+    <div><span>YOUR HOME • YOUR BUDGET</span><h3>Plan your house before you build it.</h3><p>Plot size, setbacks, floors, Vastu, rooms, parking and package cost in one calculator.</p></div>
+    <button class="gold" id="bannerCalc">Open Calculator →</button>
+  </div>
+</section>
+
+<footer>SIVA SAI CONSTRUCTIONS <span>BUILDING BETTER LIVES, ONE HOME AT A TIME</span></footer>
+
+<div class="modal" id="detailsModal">
+  <div class="dialog"><button class="x">×</button><div id="details"></div><button class="gold full" id="detailCalc">Calculate With This Package</button></div>
+</div>
+
+<div class="modal" id="calcModal">
+  <div class="dialog calculator">
+    <button class="x">×</button>
+    <div class="tiny">SIVA SAI CONSTRUCTIONS</div>
+    <h2>House Planning & Cost Calculator</h2>
+    <p class="muted">Configure the project and get a preliminary planning summary.</p>
+
+    <div class="steps"><span class="active">1 Plot</span><span>2 Building</span><span>3 Vastu</span><span>4 Quote</span></div>
+
+    <form id="calcForm">
+      <div class="section-title">Plot & Site</div>
+      <div class="grid2">
+        <label>Plot width (ft)<input id="pw" type="number" min="5" value="30"></label>
+        <label>Plot depth (ft)<input id="pd" type="number" min="5" value="50"></label>
+        <label>Facing
+          <select id="facing"><option>North</option><option>East</option><option>South</option><option>West</option></select>
+        </label>
+        <label>Road width (ft)<input id="road" type="number" min="0" value="30"></label>
+      </div>
+
+      <div class="section-title">Building</div>
+      <div class="grid2">
+        <label>Building type
+          <select id="floors">
+            <option value="G">Ground Floor</option>
+            <option value="G+1" selected>G+1</option>
+            <option value="G+2">G+2</option>
+            <option value="Stilt+G">Stilt + Ground</option>
+            <option value="Stilt+G+1">Stilt + G+1</option>
+            <option value="Stilt+G+2">Stilt + G+2</option>
+          </select>
+        </label>
+        <label>Bedrooms
+          <select id="bhk"><option>2 BHK</option><option selected>3 BHK</option><option>4 BHK</option></select>
+        </label>
+        <label>Parking
+          <select id="parking"><option>1 Car</option><option selected>2 Cars</option><option>3 Cars</option><option>Cars + Bikes</option></select>
+        </label>
+        <label>Staircase
+          <select id="stairs"><option>Dog-leg</option><option>U-shape</option><option>L-shape</option><option>Straight</option></select>
+        </label>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="lift"> Lift</label>
+        <label><input type="checkbox" id="ots" checked> OTS / ventilation</label>
+        <label><input type="checkbox" id="balcony" checked> Balcony</label>
+        <label><input type="checkbox" id="smart"> Smart-home provision</label>
+      </div>
+
+      <div class="section-title">Setbacks</div>
+      <div class="grid4">
+        <label>Front<input id="front" type="number" min="0" value="5"></label>
+        <label>Rear<input id="rear" type="number" min="0" value="3"></label>
+        <label>Left<input id="left" type="number" min="0" value="3"></label>
+        <label>Right<input id="right" type="number" min="0" value="3"></label>
+      </div>
+      <button type="button" class="outline" id="autoSetback">Auto Setbacks</button>
+
+      <div class="section-title">Vastu</div>
+      <label class="switchrow"><input type="checkbox" id="vastu" checked> <b>Enable Vastu-oriented planning</b></label>
+      <div class="vastu-grid">
+        <label>NE <select id="ne"><option selected>Pooja</option><option>Living</option><option>Open / OTS</option></select></label>
+        <label>SE <select id="se"><option selected>Kitchen</option><option>Dining</option><option>Utility</option></select></label>
+        <label>SW <select id="sw"><option selected>Master Bedroom</option><option>Bedroom</option><option>Living</option></select></label>
+        <label>NW <select id="nw"><option selected>Staircase</option><option>Bedroom</option><option>Parking</option></select></label>
+      </div>
+
+      <div class="section-title">Package</div>
+      <div class="grid2">
+        <label>Package
+          <select id="package">
+            <option value="2199">Value • ₹2,199/sq.ft</option>
+            <option value="2499" selected>Premium • ₹2,499/sq.ft</option>
+            <option value="2799">Luxury • ₹2,799/sq.ft</option>
+          </select>
+        </label>
+        <label>Area basis
+          <select id="areaMode"><option value="auto" selected>Auto buildable area</option><option value="manual">Manual total built-up area</option></select>
+        </label>
+      </div>
+      <label id="manualWrap" class="hidden">Total built-up area (sq.ft)<input id="manualArea" type="number" min="100" value="1500"></label>
+
+      <div class="result">
+        <div><span>Plot area</span><b id="plotResult">1,500 sq.ft</b></div>
+        <div><span>Approx. floor footprint</span><b id="footprintResult">990 sq.ft</b></div>
+        <div><span>Estimated built-up area</span><b id="builtResult">1,980 sq.ft</b></div>
+        <div class="total"><span>Indicative construction cost</span><strong id="costResult">₹49,45,020</strong></div>
+      </div>
+      <div class="note">Setbacks shown here are planning inputs, not a statutory approval determination. Final setbacks, FAR/FSI, height, parking and approvals must be checked against the applicable local authority rules for the actual site.</div>
+
+      <div class="actions">
+        <button type="button" class="outline" id="promptBtn">Copy Floor Plan Prompt</button>
+        <button type="button" class="gold" id="quoteBtn">Copy Quote Summary</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
