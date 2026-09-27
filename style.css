@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root{
+  --green:#0b4038; --green2:#124f46; --gold:#c89222; --cream:#f7f1e7;
+  --ink:#17211f; --muted:#68736e; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f8f5ef;color:var(--ink);font-family:'DM Sans',sans-serif}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.topbar{height:76px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,80px);position:sticky;top:0;z-index:20;box-shadow:0 3px 18px #00000010}
+.brand{display:flex;gap:10px;align-items:center}
+.brand-mark{width:42px;height:42px;border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:27px}
+.brand-name{font-weight:800;letter-spacing:2px;font-size:19px}
+.brand-sub{font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:700}
+.header-calc,.primary-btn{border:0;background:var(--gold);color:#fff;border-radius:30px;padding:12px 20px;font-weight:700;box-shadow:0 8px 18px #c8922230}
+.hero{min-height:590px;display:grid;grid-template-columns:43% 57%;align-items:center;padding:55px clamp(22px,6vw,90px);background:linear-gradient(120deg,#fffaf0 0%,#f6ead4 48%,#d9e5dc 100%);overflow:hidden}
+.hero-copy{max-width:530px;position:relative;z-index:2}
+.eyebrow{letter-spacing:3px;font-size:12px;font-weight:700;color:var(--gold)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,84px);line-height:.93;margin:15px 0 20px}
+h1 span,h2{color:var(--gold)}
+.hero-copy p{font-size:18px;line-height:1.6;color:#59625e;max-width:500px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.outline-btn{border:1px solid var(--green);background:transparent;color:var(--green);border-radius:30px;padding:11px 20px;font-weight:700}
+.hero-house{height:500px;display:flex;align-items:center;justify-content:center}
+.hero-house svg{width:100%;max-width:690px;filter:drop-shadow(0 25px 30px #34504025)}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1000px;margin:-22px auto 0;background:#fff;border-radius:18px;padding:22px 15px;box-shadow:0 15px 45px #263d3215;position:relative;z-index:5}
+.trust-row div{display:flex;align-items:center;justify-content:center;gap:10px;border-right:1px solid #ddd}
+.trust-row div:last-child{border:0}
+.trust-row b{color:var(--gold);font-size:23px}.trust-row span{font-weight:600;font-size:14px}
+.packages-section{padding:75px clamp(18px,6vw,80px)}
+.section-heading{text-align:center;max-width:650px;margin:auto}
+.section-heading span{letter-spacing:4px;font-size:12px;font-weight:700;color:#6d7771}
+h2{font-family:'Playfair Display',serif;font-size:48px;margin:7px 0;color:var(--gold)}
+.section-heading p{color:var(--muted)}
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1180px;margin:42px auto}
+.package-card{background:#fff;border-radius:22px;overflow:hidden;position:relative;box-shadow:0 15px 35px #1a342b12;transition:.25s;border:1px solid #eee4d6}
+.package-card:hover{transform:translateY(-7px);box-shadow:0 22px 45px #1a342b20}
+.package-card.premium{background:var(--green);color:#fff;transform:translateY(-10px);border:2px solid var(--gold)}
+.package-card.premium:hover{transform:translateY(-17px)}
+.popular-label{position:absolute;top:13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;padding:7px 14px;border-radius:20px;white-space:nowrap;font-size:11px;font-weight:800;z-index:2;letter-spacing:.7px}
+.mini-house{height:205px;background:linear-gradient(135deg,#d9e5d6,#f8eee1);position:relative;overflow:hidden;display:grid;place-items:end center;padding-bottom:18px}
+.mini-house span{position:absolute;top:15px;left:16px;font-size:10px;letter-spacing:2px;font-weight:800;color:#52655c}
+.mini-roof{width:210px;height:88px;background:#d6d0c3;clip-path:polygon(50% 0,100% 100%,0 100%);position:absolute;top:52px}
+.mini-body{width:205px;height:108px;background:#eee9dd;border:9px solid #c9c1b1;position:absolute;bottom:27px;box-shadow:inset 0 0 0 35px #a66e3b55}
+.mini-body:after{content:'';position:absolute;width:58px;height:82px;background:#28403b;left:66px;bottom:0}
+.package-body{padding:22px 25px 26px}
+.package-body h3{margin:0;font-size:26px;letter-spacing:1px}
+.package-type{margin:3px 0 12px;font-size:12px;opacity:.75}
+.price{font-size:34px;font-weight:800;color:var(--gold)}
+.price small{font-size:12px;color:inherit;font-weight:600}
+.package-body ul{list-style:none;padding:0;margin:18px 0 22px;display:grid;gap:10px}
+.package-body li:before{content:'✓';color:var(--gold);font-weight:900;margin-right:9px}
+.package-body button{width:100%;border:0;border-radius:24px;padding:12px;background:#123f38;color:#fff;font-weight:700}
+.premium .package-body button{background:var(--gold)}
+.calculator-banner{max-width:1100px;margin:55px auto 0;border-radius:22px;background:linear-gradient(110deg,#0b4038,#176257);color:#fff;padding:30px 35px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.calculator-banner span{letter-spacing:3px;font-size:11px;color:#dfbb6a;font-weight:800}
+.calculator-banner h3{font-family:'Playfair Display',serif;font-size:27px;margin:7px 0}
+.calculator-banner p{margin:0;color:#d4e0dc}
+.features{max-width:1050px;margin:0 auto 65px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ddd5c8}
+.features div{background:#f8f5ef;padding:25px;text-align:center;display:grid;gap:5px}
+.features span{font-size:32px;color:var(--gold)}.features small{color:var(--muted)}
+footer{background:#092f2a;color:#dce6e2;padding:26px 6vw;display:flex;justify-content:space-between;gap:20px;letter-spacing:2px;font-size:11px}
+.modal{display:none;position:fixed;inset:0;background:#0a211dcc;z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-card{background:#fff;width:min(620px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:35px;position:relative;box-shadow:0 30px 80px #0005}
+.close{position:absolute;right:17px;top:13px;border:0;background:#eee;border-radius:50%;width:36px;height:36px;font-size:25px}
+.modal-card h2{font-size:40px;margin:8px 0}
+.detail-price{font-size:35px;color:var(--gold);font-weight:800;margin:10px 0 20px}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.detail-item{background:#f5f2eb;border-radius:12px;padding:14px}.detail-item b{display:block;margin-bottom:4px}.detail-item span{font-size:13px;color:var(--muted)}
+.detail-list{padding-left:20px;line-height:1.8}
+.full{width:100%;margin-top:15px}
+.calculator label{display:grid;gap:7px;font-weight:700;margin-top:18px}
+.calculator input,.calculator select{padding:13px 14px;border:1px solid #d8d1c6;border-radius:12px;background:#fff}
+.estimate{background:#f3ead8;border:1px solid #e5d1a6;border-radius:18px;padding:20px;margin-top:22px;text-align:center}
+.estimate span{display:block;color:#6c746f}.estimate strong{display:block;font-size:38px;color:var(--green);margin:6px}.estimate small{color:#737a76}
+.calc-note{margin-top:17px;font-size:12px;line-height:1.55;color:#737a76;background:#f5f5f3;padding:13px;border-radius:12px}
+.muted{color:var(--muted)}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;padding-top:35px}.hero-house{height:360px;order:-1}.hero-copy{max-width:650px}
+ .package-grid{grid-template-columns:1fr;max-width:520px}.package-card.premium{transform:none}.package-card.premium:hover{transform:translateY(-7px)}
+ .trust-row{margin:18px 15px 0;grid-template-columns:1fr 1fr}.trust-row div:nth-child(2){border-right:0}.trust-row div{padding:10px}
+}
+@media(max-width:600px){
+ .topbar{height:68px}.header-calc{padding:9px 12px;font-size:12px}.brand-name{font-size:15px}
+ .hero{min-height:auto}.hero-house{height:280px}.hero-copy h1{font-size:53px}.hero-copy p{font-size:15px}
+ .trust-row{grid-template-columns:1fr 1fr}.trust-row span{font-size:12px}
+ h2{font-size:39px}.calculator-banner{flex-direction:column;align-items:flex-start;padding:25px}
+ .features{grid-template-columns:1fr}.features div{padding:18px}
+ footer{flex-direction:column;text-align:center}
+ .detail-grid{grid-template-columns:1fr}
+}

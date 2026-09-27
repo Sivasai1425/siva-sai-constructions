@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d3b35">
+  <title>Siva Sai Constructions | Home Construction Packages</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">⌂</div>
+      <div>
+        <div class="brand-name">SIVA SAI</div>
+        <div class="brand-sub">CONSTRUCTIONS</div>
+      </div>
+    </div>
+    <button class="header-calc" onclick="openCalculator()">Construction Calculator</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">PLAN • BUILD • LIVE BETTER</span>
+        <h1>Premium<br><span>Home</span><br>Construction</h1>
+        <p>Thoughtfully designed construction packages for beautiful, durable and practical homes.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" onclick="scrollToPackages()">Explore Packages</button>
+          <button class="outline-btn" onclick="openCalculator()">Calculate Your Home</button>
+        </div>
+      </div>
+      <div class="hero-house" aria-label="Modern house illustration">
+        <svg viewBox="0 0 700 520" role="img">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#dff0f1"/>
+              <stop offset="1" stop-color="#f8ead2"/>
+            </linearGradient>
+            <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f8f4ec"/>
+              <stop offset="1" stop-color="#d9d1c1"/>
+            </linearGradient>
+            <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#b8783c"/>
+              <stop offset="1" stop-color="#633a22"/>
+            </linearGradient>
+          </defs>
+          <rect width="700" height="520" rx="26" fill="url(#sky)"/>
+          <circle cx="105" cy="95" r="52" fill="#f3c66e" opacity=".65"/>
+          <path d="M0 365 Q170 270 340 355 T700 320 V520 H0Z" fill="#9aaf86"/>
+          <path d="M0 430 Q220 350 420 420 T700 385 V520 H0Z" fill="#667b5d"/>
+          <path d="M115 400 L290 250 L590 285 L680 400 Z" fill="#d7d1c4"/>
+          <rect x="265" y="235" width="310" height="150" fill="url(#wall)"/>
+          <path d="M235 240 L405 125 L625 205 L575 240 Z" fill="#d0c9bc"/>
+          <rect x="300" y="275" width="112" height="88" fill="#1c2928"/>
+          <rect x="425" y="275" width="112" height="88" fill="#1c2928"/>
+          <rect x="310" y="286" width="92" height="67" fill="#a9c9c6"/>
+          <rect x="435" y="286" width="92" height="67" fill="#a9c9c6"/>
+          <rect x="290" y="165" width="255" height="72" fill="url(#wood)"/>
+          <rect x="318" y="176" width="76" height="52" fill="#182523"/>
+          <rect x="407" y="176" width="76" height="52" fill="#182523"/>
+          <rect x="333" y="185" width="46" height="38" fill="#a7c9c7"/>
+          <rect x="422" y="185" width="46" height="38" fill="#a7c9c7"/>
+          <rect x="390" y="325" width="55" height="60" fill="#6a4126"/>
+          <rect x="350" y="390" width="140" height="16" rx="8" fill="#cabca5"/>
+          <rect x="325" y="407" width="190" height="15" rx="7" fill="#b8a98f"/>
+          <circle cx="205" cy="347" r="38" fill="#3d6244"/>
+          <circle cx="185" cy="330" r="31" fill="#557a4d"/>
+          <circle cx="585" cy="350" r="42" fill="#3d6244"/>
+          <circle cx="615" cy="327" r="29" fill="#557a4d"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="trust-row">
+      <div><b>◆</b><span>Premium Quality</span></div>
+      <div><b>✓</b><span>Reliable Construction</span></div>
+      <div><b>⌂</b><span>Modern Designs</span></div>
+      <div><b>♧</b><span>Sustainable Living</span></div>
+    </section>
+
+    <section id="packages" class="packages-section">
+      <div class="section-heading">
+        <span>CHOOSE YOUR PERFECT</span>
+        <h2>HOME PACKAGE</h2>
+        <p>Tap any package to view specifications, inclusions and pricing.</p>
+      </div>
+
+      <div class="package-grid">
+        <article class="package-card value" onclick="openPackage('value')">
+          <div class="popular-label">SMART CHOICE</div>
+          <div class="mini-house"><span>VALUE</span><div class="mini-roof"></div><div class="mini-body"></div></div>
+          <div class="package-body">
+            <h3>VALUE</h3>
+            <p class="package-type">CONSTRUCTION PACKAGE</p>
+            <div class="price">₹2,199 <small>/ sq.ft</small></div>
+            <ul>
+              <li>Quality materials</li>
+              <li>Functional design</li>
+              <li>Budget friendly</li>
+              <li>Ideal for first-time builders</li>
+            </ul>
+            <button onclick="event.stopPropagation(); openPackage('value')">View Details</button>
+          </div>
+        </article>
+
+        <article class="package-card premium" onclick="openPackage('premium')">
+          <div class="popular-label">★ MOST POPULAR</div>
+          <div class="mini-house"><span>PREMIUM</span><div class="mini-roof"></div><div class="mini-body"></div></div>
+          <div class="package-body">
+            <h3>PREMIUM</h3>
+            <p class="package-type">CONSTRUCTION PACKAGE</p>
+            <div class="price">₹2,499 <small>/ sq.ft</small></div>
+            <ul>
+              <li>Superior finishes</li>
+              <li>Modern architecture</li>
+              <li>Better durability</li>
+              <li>Luxury + value balance</li>
+            </ul>
+            <button onclick="event.stopPropagation(); openPackage('premium')">View Details</button>
+          </div>
+        </article>
+
+        <article class="package-card luxury" onclick="openPackage('luxury')">
+          <div class="popular-label">LIVE LUXURY</div>
+          <div class="mini-house"><span>LUXURY</span><div class="mini-roof"></div><div class="mini-body"></div></div>
+          <div class="package-body">
+            <h3>LUXURY</h3>
+            <p class="package-type">CONSTRUCTION PACKAGE</p>
+            <div class="price">₹2,799 <small>/ sq.ft</small></div>
+            <ul>
+              <li>High-end materials</li>
+              <li>Premium design</li>
+              <li>Smart-home ready</li>
+              <li>Luxury living experience</li>
+            </ul>
+            <button onclick="event.stopPropagation(); openPackage('luxury')">View Details</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="calculator-banner">
+        <div>
+          <span>BUILD YOUR BUDGET</span>
+          <h3>Calculate your estimated construction cost</h3>
+          <p>Enter your built-up area and choose a package. The calculator updates instantly.</p>
+        </div>
+        <button class="primary-btn" onclick="openCalculator()">Open Calculator →</button>
+      </div>
+    </section>
+
+    <section class="features">
+      <div><span>♙</span><b>Expert Guidance</b><small>Planning to handover</small></div>
+      <div><span>◷</span><b>On-Time Delivery</b><small>Clear project milestones</small></div>
+      <div><span>♢</span><b>End-to-End Support</b><small>One team, one process</small></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>SIVA SAI CONSTRUCTIONS</span>
+    <span>BUILDING BETTER LIVES, ONE HOME AT A TIME</span>
+  </footer>
+
+  <div class="modal" id="packageModal" onclick="closeOnBackdrop(event, 'packageModal')">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal('packageModal')">×</button>
+      <div id="packageContent"></div>
+      <button class="primary-btn full" onclick="closeModal('packageModal'); openCalculator(currentPackage)">Calculate With This Package</button>
+    </div>
+  </div>
+
+  <div class="modal" id="calculatorModal" onclick="closeOnBackdrop(event, 'calculatorModal')">
+    <div class="modal-card calculator">
+      <button class="close" onclick="closeModal('calculatorModal')">×</button>
+      <span class="eyebrow">SIVA SAI CONSTRUCTIONS</span>
+      <h2>Construction Cost Calculator</h2>
+      <p class="muted">Indicative estimate based on the selected package rate.</p>
+
+      <label>Built-up area (sq.ft)
+        <input id="areaInput" type="number" min="100" value="1500" oninput="calculateCost()">
+      </label>
+
+      <label>Package
+        <select id="packageSelect" onchange="calculateCost()">
+          <option value="value">Value • ₹2,199/sq.ft</option>
+          <option value="premium" selected>Premium • ₹2,499/sq.ft</option>
+          <option value="luxury">Luxury • ₹2,799/sq.ft</option>
+        </select>
+      </label>
+
+      <div class="estimate">
+        <span>Estimated construction cost</span>
+        <strong id="estimateValue">₹37,48,500</strong>
+        <small id="rateText">1,500 sq.ft × ₹2,499</small>
+      </div>
+
+      <div class="calc-note">
+        <b>Note:</b> This is an indicative package calculation. Actual project cost can vary based on location, soil/foundation, plan, structure, specifications, approvals, GST, external works and client selections.
+      </div>
+
+      <button class="primary-btn full" onclick="closeModal('calculatorModal')">Done</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
